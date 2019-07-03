@@ -1,15 +1,17 @@
 # Simple Node Imdb Scraper
 
-This is a simple NodeJS IMDB scraper project which scrapes all the movies based on search input and caches results on redis. Support movie detail just pass imdb title id. Sorting based on ratings and also limit the number of results for faster response.
+This is a simple NodeJS IMDB scraper project which scrapes all the movies based on search input and caches results on redis. Uses cheerio for scraping the detail page and uses Imdb API for search. Support movie detail just pass imdb title id. Sorting based on ratings and also limit the number of results for faster response.
 
 ##Features
 
 - ES6/ES7 style
 - Express
+- Cheerio
 - Redis caching
 - Search/Autocomplete
 - Eslint rules
 - esm
+- Export/Import style
 
 **Clone the Repo**
 ```
