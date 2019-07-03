@@ -52,6 +52,24 @@ For Running the project in production mode
 npm run start
 ```
 
+## Routes/API's
+```
+http://localhost:3002/autocomplete/?q=<search_query>&limit=<limit>
+```
+
+| QueryParams  | dataType |
+|--------------|----------|
+| search_query | string   |
+| limit        | number   |
+
+```
+http://localhost:3002/movies/<titleId>
+
+```
+| URLParams | dataType |
+|-----------|----------|
+| titleId   | string   |
+
 ## Documented
 
  - By Rama Krishna
