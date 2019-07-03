@@ -2,16 +2,18 @@
 
 This is a simple NodeJS IMDB scraper project which scrapes all the movies based on search input and caches results on redis. Support movie detail just pass imdb title id. Sorting based on ratings and also limit the number of results for faster response.
 
-###Features
+##Features
 
 - ES6/ES7 style
 - Express
 - Redis caching
 - Search/Autocomplete
+- Eslint rules
+- esm
 
 **Clone the Repo**
 ```
-git clone https://github.com/p-rk/react-gatsby-staticweb.git
+git clone https://github.com/p-rk/imdb-scraper.git
 ```
 
 ## Download Redis
