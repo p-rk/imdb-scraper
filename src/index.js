@@ -11,7 +11,7 @@ async function asyncForEach(array, callback) {
 /* eslint-enable */
 const autoComplete = async (req, res) => {
   const { query: { q, limit } } = req;
-  const search = q.replace(/ /ig, '_');
+  const search = q.replace(/ /ig, '_').toLowerCase();
   const isCached = await redis.get(search);
   try {
     if (isCached) return res.status(200).json(JSON.parse(isCached));
@@ -28,7 +28,9 @@ const autoComplete = async (req, res) => {
         });
         const filterMovies = (results && results.filter((titles) => titles['@type'] === 'Movie')) || [];
         const sortedResults = (filterMovies && filterMovies.length > 0)
-          ? results.sort((a, b) => (b.aggregateRating.ratingValue - a.aggregateRating.ratingValue))
+          ? results.sort((a, b) => (
+            b && b.aggregateRating && b.aggregateRating.ratingValue
+            - a && a.aggregateRating && a.aggregateRating.ratingValue))
           : [];
         redis.set(search, JSON.stringify(sortedResults));
         return res.status(200).json(sortedResults);
